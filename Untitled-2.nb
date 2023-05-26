@@ -1,0 +1,405 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[     15453,        397]
+NotebookOptionsPosition[     12025,        337]
+NotebookOutlinePosition[     12447,        353]
+CellTagsIndexPosition[     12404,        350]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Rearrange Expression by removing the Attribute Orderless from Times\
+\>", "Title",
+ CellChangeTimes->{{3.8941019754859934`*^9, 
+  3.894101990795908*^9}},ExpressionUUID->"a1ff2d53-1f63-4aae-a1a0-\
+f3678a50359f"],
+
+Cell["This is not recommended.", "Text",
+ CellChangeTimes->{{3.894102011458971*^9, 
+  3.8941020150906954`*^9}},ExpressionUUID->"ce2b8e0f-5f57-4f1c-bf04-\
+aea225006b6d"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAttributes", "[", 
+  RowBox[{"Times", ",", "Orderless"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"PutQInFront", "//", "ClearAll"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PutQInFront", "[", 
+   RowBox[{"list_", "?", "ListQ"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"selection", ",", "complement"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"ClearAttributes", "[", 
+      RowBox[{"Times", ",", "Orderless"}], "]"}], ";", 
+     RowBox[{"selection", "=", 
+      RowBox[{
+       RowBox[{"Select", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Cases", "[", 
+           RowBox[{"#", ",", "q", ",", "All"}], "]"}], "!=", 
+          RowBox[{"{", "}"}]}], "&"}], "]"}], "[", "list", "]"}]}], ";", 
+     RowBox[{"complement", "=", 
+      RowBox[{"DeleteCases", "[", 
+       RowBox[{"list", ",", 
+        RowBox[{"Alternatives", "@@", "selection"}]}], "]"}]}], ";", 
+     RowBox[{"Join", "[", 
+      RowBox[{"selection", ",", "complement"}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"RearrangeExpression", "//", "ClearAll"}], "\[IndentingNewLine]", 
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"RearrangeExpression", ",", 
+   RowBox[{"{", "Listable", "}"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RearrangeExpression", "[", "input_", "]"}], "/;", 
+   RowBox[{"!", 
+    RowBox[{"AtomQ", "[", "input", "]"}]}]}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"MemberQ", "[", "Orderless", "]"}], "[", 
+     RowBox[{"Attributes", "[", "Times", "]"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"ClearAttributes", "[", 
+      RowBox[{"Times", ",", "Orderless"}], "]"}], ";", 
+     RowBox[{"Block", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"expressionTree", ",", "foldedTree"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"ClearAttributes", "[", 
+         RowBox[{"Times", ",", "Orderless"}], "]"}], ";", 
+        RowBox[{"expressionTree", "=", 
+         RowBox[{"ExpressionTree", "[", "input", "]"}]}], ";", 
+        RowBox[{"foldedTree", "=", 
+         RowBox[{"TreeFold", "[", 
+          RowBox[{"\[FormalF]", ",", "expressionTree"}], "]"}]}], ";", 
+        RowBox[{"TreeExpression", "[", 
+         RowBox[{
+          RowBox[{"ReplaceAt", "[", 
+           RowBox[{"foldedTree", ",", 
+            RowBox[{"\[FormalF]", "->", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"\[FormalF]", "[", 
+                RowBox[{"#1", ",", 
+                 RowBox[{"PutQInFront", "[", "#2", "]"}]}], "]"}], "&"}], 
+              ")"}]}], ",", 
+            RowBox[{"Position", "[", 
+             RowBox[{"foldedTree", ",", "\[FormalF]", ",", "All"}], "]"}]}], 
+           "]"}], "/.", 
+          RowBox[{"\[FormalF]", "->", "Tree"}]}], "]"}]}]}], "]"}]}], ",", 
+    RowBox[{"Block", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"expressionTree", ",", "foldedTree"}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"ClearAttributes", "[", 
+        RowBox[{"Times", ",", "Orderless"}], "]"}], ";", 
+       RowBox[{"expressionTree", "=", 
+        RowBox[{"ExpressionTree", "[", "input", "]"}]}], ";", 
+       RowBox[{"foldedTree", "=", 
+        RowBox[{"TreeFold", "[", 
+         RowBox[{"\[FormalF]", ",", "expressionTree"}], "]"}]}], ";", 
+       RowBox[{"TreeExpression", "[", 
+        RowBox[{
+         RowBox[{"ReplaceAt", "[", 
+          RowBox[{"foldedTree", ",", 
+           RowBox[{"\[FormalF]", "->", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"\[FormalF]", "[", 
+               RowBox[{"#1", ",", 
+                RowBox[{"PutQInFront", "[", "#2", "]"}]}], "]"}], "&"}], 
+             ")"}]}], ",", 
+           RowBox[{"Position", "[", 
+            RowBox[{"foldedTree", ",", "\[FormalF]", ",", "All"}], "]"}]}], 
+          "]"}], "/.", 
+         RowBox[{"\[FormalF]", "->", "Tree"}]}], "]"}]}]}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RearrangeExpression", "[", 
+   RowBox[{"input_", "?", "AtomQ"}], "]"}], ":=", "input"}]}], "Input",
+ CellChangeTimes->{{3.894027335917243*^9, 3.8940273470997777`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"6be404bf-f179-43a9-90bf-e0577ca7d0d7"],
+
+Cell["Now Times does not have the Attribute Orderless.", "Text",
+ CellChangeTimes->{{3.894102044444168*^9, 
+  3.894102051699992*^9}},ExpressionUUID->"542a41f9-6d07-42f0-a9c2-\
+2894fc2b4449"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Attributes", "[", "Times", "]"}]], "Input",
+ CellChangeTimes->{{3.8941020585619345`*^9, 3.8941020607035227`*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"ebb42b38-507f-4774-9e47-8c9ee9c81f82"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "Flat", ",", "Listable", ",", "NumericFunction", ",", "OneIdentity", ",", 
+   "Protected"}], "}"}]], "Output",
+ CellChangeTimes->{3.8941020610791044`*^9, 3.8941021372037363`*^9},
+ CellLabel->"Out[72]=",ExpressionUUID->"ccd66f26-fb4a-4951-8473-5a5f282e5576"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "TimesHasAttributeOrderless", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TimesHasAttributeOrderless", "[", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"MemberQ", "[", "Orderless", "]"}], "[", 
+   RowBox[{"Attributes", "[", "Times", "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.894102062002885*^9, 3.8941020667697783`*^9}, {
+  3.894102104123232*^9, 3.8941021267011933`*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"73f4bb5e-21df-4c4b-a84c-ef86ca64aa6c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TimesHasAttributeOrderless", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.894102128385396*^9, 3.894102129912449*^9}},
+ CellLabel->"In[75]:=",ExpressionUUID->"86524edf-6958-46fd-84e0-70f0ac43e5d6"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.8941021302195215`*^9, 3.8941021391085634`*^9}},
+ CellLabel->"Out[75]=",ExpressionUUID->"8d4a4485-f621-4ce5-8dbf-6705715c3e94"]
+}, Open  ]],
+
+Cell["To add the attribute Orderless back, use SetAttributes.", "Text",
+ CellChangeTimes->{{3.8941020532778273`*^9, 
+  3.894102090641159*^9}},ExpressionUUID->"81df5b52-b1b9-4f4f-b297-\
+b2f9bad88e56"],
+
+Cell[BoxData[
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"Times", ",", "Orderless"}], "]"}]], "Input",
+ CellChangeTimes->{{3.894102091481801*^9, 3.8941020967844753`*^9}},
+ CellLabel->"In[76]:=",ExpressionUUID->"3440a026-a077-40e7-bd1b-c5f5553f163e"],
+
+Cell["Now Times has the attribute Orderless.", "Text",
+ CellChangeTimes->{{3.8941020990383644`*^9, 3.894102100052359*^9}, {
+  3.8941021429556246`*^9, 
+  3.89410214906923*^9}},ExpressionUUID->"eb98d199-ab8e-4024-8e02-\
+aabd42f71060"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TimesHasAttributeOrderless", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.894102150451868*^9, 3.8941021518835087`*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"c5d4cdcc-aeb0-4a5f-9cd9-053607f48678"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.894102152196796*^9},
+ CellLabel->"Out[77]=",ExpressionUUID->"066df598-bd94-4314-938d-ba08bf80e1b6"]
+}, Open  ]],
+
+Cell["\<\
+This can cause problems because we want to turn a q into q a. If we have the \
+output q a we get\
+\>", "Text",
+ CellChangeTimes->{{3.8941021547050953`*^9, 
+  3.8941021740033736`*^9}},ExpressionUUID->"0b22336d-6f78-4524-9119-\
+3598b613b10c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"q", " ", "a"}]], "Input",
+ CellChangeTimes->{{3.894102174481429*^9, 3.8941021748921347`*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"ca9350f1-00b6-49c8-9a94-de6702343eb3"],
+
+Cell[BoxData[
+ RowBox[{"a", " ", "q"}]], "Output",
+ CellChangeTimes->{3.8941021752980795`*^9},
+ CellLabel->"Out[78]=",ExpressionUUID->"658c3d50-6176-4ff4-8d88-5fd8696fc133"]
+}, Open  ]],
+
+Cell["\<\
+Which undoes are work, so we need to clear the attribute Orderless to \
+preserve this change.\
+\>", "Text",
+ CellChangeTimes->{{3.8941021764960275`*^9, 
+  3.8941021917649384`*^9}},ExpressionUUID->"57a56272-c0b2-4e5a-adb6-\
+598d573f466e"],
+
+Cell[BoxData[
+ RowBox[{"ClearAttributes", "[", 
+  RowBox[{"Times", ",", "Orderless"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941021925277357`*^9, 3.894102202543193*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"65985c08-eea1-4622-abb1-713a05ca7796"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"q", " ", "a"}]], "Input",
+ CellChangeTimes->{{3.894102206142095*^9, 3.894102206516906*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"c7607fe3-3ee8-45c9-80b6-b974a77b82c3"],
+
+Cell[BoxData[
+ RowBox[{"q", " ", "a"}]], "Output",
+ CellChangeTimes->{3.894102206857791*^9},
+ CellLabel->"Out[80]=",ExpressionUUID->"eb44fe3a-7564-44cc-98ba-bff96fd6c074"]
+}, Open  ]],
+
+Cell["Now the expression is not automatically reordered.", "Text",
+ CellChangeTimes->{{3.894102208107602*^9, 
+  3.8941022239446063`*^9}},ExpressionUUID->"77969377-cd93-4d9e-a84a-\
+3ef4f4cdd345"],
+
+Cell["Here are some examples of how to use the function.", "Text",
+ CellChangeTimes->{{3.8941022394934216`*^9, 
+  3.894102246263609*^9}},ExpressionUUID->"db974b0f-a65b-4075-a270-\
+066f8fe105a5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RearrangeExpression", "[", 
+  RowBox[{"a", " ", "q"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941022469515553`*^9, 3.8941022493731375`*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"1b352b2c-1f0d-4429-b6aa-07cda652a744"],
+
+Cell[BoxData[
+ RowBox[{"q", " ", "a"}]], "Output",
+ CellChangeTimes->{3.8941022497189236`*^9},
+ CellLabel->"Out[81]=",ExpressionUUID->"8a6efe37-e70b-43da-aecd-8bc6bbad24be"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RearrangeExpression", "[", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"a", " ", "q"}], "]"}], 
+   RowBox[{"Tan", "[", 
+    RowBox[{"a", " ", "q"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941022469515553`*^9, 3.8941022740721183`*^9}},
+ CellLabel->"In[82]:=",ExpressionUUID->"d8c1563a-a2ab-436a-bcc6-b765f1015b61"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"q", " ", "a"}], ")"}], "\[ExponentialE]"], " ", 
+  RowBox[{"Tan", "[", 
+   RowBox[{"q", " ", "a"}], "]"}]}]], "Output",
+ CellChangeTimes->{3.8941022756900744`*^9},
+ CellLabel->"Out[82]=",ExpressionUUID->"bc7587fe-d02b-4721-81ea-d8f83181d585"]
+}, Open  ]],
+
+Cell["\<\
+However, this affects the performance of Times and is not recommended. \
+\>", "Text",
+ CellChangeTimes->{{3.8941022832055483`*^9, 
+  3.894102330575008*^9}},ExpressionUUID->"bfd2784d-683b-474e-9f55-\
+b0a0ae828b07"],
+
+Cell["\<\
+I have worked out a solution with NonCommutativeMultiply, but it has issues \
+with fractions currently.\
+\>", "Text",
+ CellChangeTimes->{{3.8941023351152797`*^9, 
+  3.894102351814268*^9}},ExpressionUUID->"6826fb69-b372-47b7-a3ee-\
+449d29789452"],
+
+Cell["Add the attribute Orderless back.", "Text",
+ CellChangeTimes->{
+  3.8941023328578825`*^9},ExpressionUUID->"39c85633-ee95-42a3-aad8-\
+2b6bab1a5853"],
+
+Cell[BoxData[
+ RowBox[{"SetAttributes", "[", 
+  RowBox[{"Times", ",", "Orderless"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8941023045808067`*^9, 3.894102308666747*^9}},
+ CellLabel->"In[83]:=",ExpressionUUID->"9546f5a1-9926-4b51-9939-ecafa030dd9f"]
+}, Open  ]]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6a5e7f5a-1c4d-4314-83da-e9de630fa72b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 22, 220, 5, 222, "Title",ExpressionUUID->"a1ff2d53-1f63-4aae-a1a0-f3678a50359f"],
+Cell[806, 29, 168, 3, 35, "Text",ExpressionUUID->"ce2b8e0f-5f57-4f1c-bf04-aea225006b6d"],
+Cell[977, 34, 4222, 105, 572, "Input",ExpressionUUID->"6be404bf-f179-43a9-90bf-e0577ca7d0d7"],
+Cell[5202, 141, 190, 3, 35, "Text",ExpressionUUID->"542a41f9-6d07-42f0-a9c2-2894fc2b4449"],
+Cell[CellGroupData[{
+Cell[5417, 148, 216, 3, 28, "Input",ExpressionUUID->"ebb42b38-507f-4774-9e47-8c9ee9c81f82"],
+Cell[5636, 153, 299, 6, 32, "Output",ExpressionUUID->"ccd66f26-fb4a-4951-8473-5a5f282e5576"]
+}, Open  ]],
+Cell[5950, 162, 501, 10, 67, "Input",ExpressionUUID->"73f4bb5e-21df-4c4b-a84c-ef86ca64aa6c"],
+Cell[CellGroupData[{
+Cell[6476, 176, 219, 3, 28, "Input",ExpressionUUID->"86524edf-6958-46fd-84e0-70f0ac43e5d6"],
+Cell[6698, 181, 181, 2, 32, "Output",ExpressionUUID->"8d4a4485-f621-4ce5-8dbf-6705715c3e94"]
+}, Open  ]],
+Cell[6894, 186, 199, 3, 35, "Text",ExpressionUUID->"81df5b52-b1b9-4f4f-b297-b2f9bad88e56"],
+Cell[7096, 191, 248, 4, 28, "Input",ExpressionUUID->"3440a026-a077-40e7-bd1b-c5f5553f163e"],
+Cell[7347, 197, 232, 4, 35, "Text",ExpressionUUID->"eb98d199-ab8e-4024-8e02-aabd42f71060"],
+Cell[CellGroupData[{
+Cell[7604, 205, 221, 3, 28, "Input",ExpressionUUID->"c5d4cdcc-aeb0-4a5f-9cd9-053607f48678"],
+Cell[7828, 210, 152, 2, 32, "Output",ExpressionUUID->"066df598-bd94-4314-938d-ba08bf80e1b6"]
+}, Open  ]],
+Cell[7995, 215, 250, 6, 58, "Text",ExpressionUUID->"0b22336d-6f78-4524-9119-3598b613b10c"],
+Cell[CellGroupData[{
+Cell[8270, 225, 196, 3, 28, "Input",ExpressionUUID->"ca9350f1-00b6-49c8-9a94-de6702343eb3"],
+Cell[8469, 230, 173, 3, 32, "Output",ExpressionUUID->"658c3d50-6176-4ff4-8d88-5fd8696fc133"]
+}, Open  ]],
+Cell[8657, 236, 247, 6, 58, "Text",ExpressionUUID->"57a56272-c0b2-4e5a-adb6-598d573f466e"],
+Cell[8907, 244, 250, 4, 28, "Input",ExpressionUUID->"65985c08-eea1-4622-abb1-713a05ca7796"],
+Cell[CellGroupData[{
+Cell[9182, 252, 194, 3, 28, "Input",ExpressionUUID->"c7607fe3-3ee8-45c9-80b6-b974a77b82c3"],
+Cell[9379, 257, 171, 3, 32, "Output",ExpressionUUID->"eb44fe3a-7564-44cc-98ba-bff96fd6c074"]
+}, Open  ]],
+Cell[9565, 263, 194, 3, 35, "Text",ExpressionUUID->"77969377-cd93-4d9e-a84a-3ef4f4cdd345"],
+Cell[9762, 268, 194, 3, 35, "Text",ExpressionUUID->"db974b0f-a65b-4075-a270-066f8fe105a5"],
+Cell[CellGroupData[{
+Cell[9981, 275, 244, 4, 28, "Input",ExpressionUUID->"1b352b2c-1f0d-4429-b6aa-07cda652a744"],
+Cell[10228, 281, 173, 3, 32, "Output",ExpressionUUID->"8a6efe37-e70b-43da-aecd-8bc6bbad24be"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10438, 289, 351, 8, 28, "Input",ExpressionUUID->"d8c1563a-a2ab-436a-bcc6-b765f1015b61"],
+Cell[10792, 299, 314, 8, 32, "Output",ExpressionUUID->"bc7587fe-d02b-4721-81ea-d8f83181d585"]
+}, Open  ]],
+Cell[11121, 310, 223, 5, 35, "Text",ExpressionUUID->"bfd2784d-683b-474e-9f55-b0a0ae828b07"],
+Cell[11347, 317, 255, 6, 58, "Text",ExpressionUUID->"6826fb69-b372-47b7-a3ee-449d29789452"],
+Cell[11605, 325, 153, 3, 35, "Text",ExpressionUUID->"39c85633-ee95-42a3-aad8-2b6bab1a5853"],
+Cell[11761, 330, 248, 4, 28, "Input",ExpressionUUID->"9546f5a1-9926-4b51-9939-ecafa030dd9f"]
+}, Open  ]]
+}
+]
+*)
+

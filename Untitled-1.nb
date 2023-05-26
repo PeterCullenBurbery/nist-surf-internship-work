@@ -1,0 +1,47 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1119,         39]
+NotebookOptionsPosition[       752,         25]
+NotebookOutlinePosition[      1171,         41]
+CellTagsIndexPosition[      1128,         38]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Fraction Issue with NonCommutativeMultiply", "Title",
+ CellChangeTimes->{{3.8941019491587877`*^9, 
+  3.894101956003812*^9}},ExpressionUUID->"64a6edc1-1a9a-4a13-9ccd-\
+66d5f7c29a10"]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{Automatic, 8.400000000000091}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"040578d3-ce1a-4d8d-9548-cc8ddc0a9921"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 187, 3, 160, "Title",ExpressionUUID->"64a6edc1-1a9a-4a13-9ccd-66d5f7c29a10"]
+}
+]
+*)
+

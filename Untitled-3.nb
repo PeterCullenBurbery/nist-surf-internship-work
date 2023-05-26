@@ -1,0 +1,49 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1111,         39]
+NotebookOptionsPosition[       760,         25]
+NotebookOutlinePosition[      1163,         41]
+CellTagsIndexPosition[      1120,         38]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["Rearrange Expression by using NonCommutativeMultiply", "Title",
+ CellChangeTimes->{{3.894101995103433*^9, 
+  3.894102003900715*^9}},ExpressionUUID->"f0129c88-133a-497a-b335-\
+210128891450"]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"48a3b28c-180c-4374-890b-51a89a552472"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 195, 3, 222, "Title",ExpressionUUID->"f0129c88-133a-497a-b335-210128891450"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
