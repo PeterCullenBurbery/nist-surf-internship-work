@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[      1577,         56]
-NotebookOptionsPosition[      1206,         42]
-NotebookOutlinePosition[      1628,         58]
-CellTagsIndexPosition[      1585,         55]
+NotebookDataLength[      2552,         85]
+NotebookOptionsPosition[      1903,         63]
+NotebookOutlinePosition[      2306,         79]
+CellTagsIndexPosition[      2263,         76]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[TextData[{
  "QPh Expression to ",
  Cell[BoxData[
@@ -38,10 +40,29 @@ Cell[TextData[{
 }], "Title",
  CellChangeTimes->{{3.894102879738144*^9, 
   3.8941029277186384`*^9}},ExpressionUUID->"5c0f1036-bc99-4d67-8c81-\
-bdf150d1ff3c"]
+bdf150d1ff3c"],
+
+Cell[CellGroupData[{
+
+Cell["Deleting QPh", "Subsubsection",
+ CellChangeTimes->{{3.894034191077742*^9, 3.8940341942970057`*^9}},
+ CellID->162516366,ExpressionUUID->"7f4d3863-3352-40fd-b098-75da562286e7"],
+
+Cell[BoxData[{
+ RowBox[{"DeleteQPh", "//", "ClearAll"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeleteQPh", "[", 
+   RowBox[{"input_", "?", "StringQ"}], "]"}], ":=", 
+  RowBox[{"StringDelete", "[", 
+   RowBox[{"input", ",", "\"\<\\\\text{QPh}\>\""}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.894034200866169*^9, 3.8940342389563313`*^9}},
+ CellLabel->"In[105]:=",
+ CellID->91282042,ExpressionUUID->"7e5cc8e6-729a-47f2-a3c8-ce6b40744d81"]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{574.8, 579.6},
-WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+WindowSize->{574.8, 574.8},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"be79f1ba-c352-4ca9-a399-8747eb2cdd0d"
@@ -57,7 +78,15 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[561, 20, 641, 20, 222, "Title",ExpressionUUID->"5c0f1036-bc99-4d67-8c81-bdf150d1ff3c"]
+Cell[CellGroupData[{
+Cell[583, 22, 641, 20, 222, "Title",ExpressionUUID->"5c0f1036-bc99-4d67-8c81-bdf150d1ff3c"],
+Cell[CellGroupData[{
+Cell[1249, 46, 180, 2, 45, "Subsubsection",ExpressionUUID->"7f4d3863-3352-40fd-b098-75da562286e7",
+ CellID->162516366],
+Cell[1432, 50, 443, 9, 78, "Input",ExpressionUUID->"7e5cc8e6-729a-47f2-a3c8-ce6b40744d81",
+ CellID->91282042]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)

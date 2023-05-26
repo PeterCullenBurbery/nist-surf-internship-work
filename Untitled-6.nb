@@ -1,0 +1,159 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      6325,        151]
+NotebookOptionsPosition[      5513,        129]
+NotebookOutlinePosition[      5935,        145]
+CellTagsIndexPosition[      5892,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "QPhI Expression to ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{"L", 
+     StyleBox[
+      AdjustmentBox["A",
+       BoxBaselineShift->-0.4,
+       BoxMargins->{{-0.5, -0.3}, {0, 0}}],
+      FontSize->Smaller], "T", 
+     AdjustmentBox["E",
+      BoxBaselineShift->0.5,
+      BoxMargins->{{-0.3, 0}, {0, 0}}], "X"}],
+    SingleLetterItalics->False], TraditionalForm]],ExpressionUUID->
+  "1b110da2-d722-4606-9ce7-2d104fd38a9f"],
+ " function based on NonCommutative Multiply "
+}], "Title",
+ CellChangeTimes->{{3.894102879738144*^9, 
+  3.894102953181936*^9}},ExpressionUUID->"5c0f1036-bc99-4d67-8c81-\
+bdf150d1ff3c"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"\[AliasDelimiter]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.894102981061347*^9, 
+  3.894102984308206*^9}},ExpressionUUID->"3850598f-771b-469b-ad75-\
+8ceb9e19b84e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Names", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.894102985709202*^9, 3.894102989436943*^9}},
+ CellLabel->"In[97]:=",ExpressionUUID->"38e27eff-1fab-4e0f-9f93-3a230b936007"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"a\"\>", ",", "\<\"AddSemicolon\"\>", ",", "\<\"Alphametic\"\>",
+    ",", "\<\"AppendBase\"\>", ",", "\<\"Arity\"\>", 
+   ",", "\<\"AssociationTranspose\"\>", ",", "\<\"b\"\>", ",", "\<\"base\"\>",
+    ",", "\<\"BuildTeXFragment\"\>", 
+   ",", "\<\"BuildTeXFragmentWithQInFront\"\>", ",", "\<\"c\"\>", 
+   ",", "\<\"CircleFit\"\>", ",", "\<\"CircleProperties\"\>", 
+   ",", "\<\"ColorGraphVertices\"\>", ",", "\<\"complement\"\>", 
+   ",", "\<\"ConicProperties\"\>", ",", "\<\"ConicSectionPlot\"\>", 
+   ",", "\<\"d\"\>", ",", "\<\"DecimalRound\"\>", 
+   ",", "\<\"DeleteNewLineAndReturnCharacters\"\>", ",", "\<\"DeleteQPh\"\>", 
+   ",", "\<\"DeleteQPhI\"\>", ",", "\<\"e\"\>", 
+   ",", "\<\"EllipseProperties\"\>", ",", "\<\"EvenFunctionQ\"\>", 
+   ",", "\<\"EvenPermutations\"\>", ",", "\<\"expression\"\>", 
+   ",", "\<\"expressionTree\"\>", ",", "\<\"f\"\>", 
+   ",", "\<\"FociPointEllipse\"\>", ",", "\<\"FociPointHyperbola\"\>", 
+   ",", "\<\"foldedtree\"\>", ",", "\<\"foldedTree\"\>", 
+   ",", "\<\"FourPointParabolas\"\>", ",", "\<\"FunctionParity\"\>", 
+   ",", "\<\"g\"\>", ",", "\<\"HyperbolaProperties\"\>", ",", "\<\"input\"\>",
+    ",", "\<\"IntegerChop\"\>", ",", "\<\"IntegerPalindromeQ\"\>", 
+   ",", "\<\"InteractiveConicPlot\"\>", ",", "\<\"IsTranscendentalNumber\"\>",
+    ",", "\<\"j\"\>", ",", "\<\"KeyEvent\"\>", ",", "\<\"list\"\>", 
+   ",", "\<\"MenuKey\"\>", ",", "\<\"Modifiers\"\>", 
+   ",", "\<\"MonitorProgress\"\>", ",", "\<\"n\"\>", 
+   ",", "\<\"NonCommutativeMultiplyToTimes\"\>", ",", "\<\"OddFunctionQ\"\>", 
+   ",", "\<\"PacletizeResourceFunction\"\>", 
+   ",", "\<\"ParabolaProperties\"\>", ",", "\<\"PermutationFromIndex\"\>", 
+   ",", "\<\"PersistResourceFunction\"\>", ",", "\<\"PlaceQInFront\"\>", 
+   ",", "\<\"PlayWordle\"\>", ",", "\<\"PutQInFront\"\>", ",", "\<\"q\"\>", 
+   ",", "\<\"QPh\"\>", ",", "\<\"QPhI\"\>", ",", "\<\"QPhIoLateX\"\>", 
+   ",", "\<\"QPhIToLateX\"\>", ",", "\<\"QPhIToLaTeX\"\>", 
+   ",", "\<\"QPhToLaTeX\"\>", ",", "\<\"RandomString\"\>", 
+   ",", "\<\"RearrangeExpression\"\>", ",", "\<\"RemoveLastArgument\"\>", 
+   ",", "\<\"RemoveList\"\>", 
+   ",", "\<\"ReplaceSquareBracketsWithParentheses\"\>", 
+   ",", "\<\"ResourceSubmissions\"\>", ",", "\<\"RotatedEllipseMatrix\"\>", 
+   ",", "\<\"selection\"\>", ",", "\<\"SimultaneousRationalize\"\>", 
+   ",", "\<\"SkyChart\"\>", ",", "\<\"SudokuSolve\"\>", 
+   ",", "\<\"SymbolicIndexedArray\"\>", ",", "\<\"t\"\>", 
+   ",", "\<\"TimesHasAttributeOrderless\"\>", ",", "\<\"u\"\>", 
+   ",", "\<\"v\"\>", ",", "\<\"w\"\>", ",", "\<\"W65\"\>", ",", "\<\"W76\"\>",
+    ",", "\<\"W87\"\>", ",", "\<\"x\"\>", ",", "\<\"y\"\>", ",", "\<\"z\"\>", 
+   ",", "\<\"z$\"\>", ",", "\<\"\[Zeta]\"\>", ",", "\<\"\[Rho]\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8941029898143215`*^9},
+ CellLabel->"Out[97]=",ExpressionUUID->"04d74389-7b43-45d1-bf25-124707a9e75a"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"QPhIToLaTeX", "//", "ClearAll"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QPhIToLaTeX", "[", "input_", "]"}], ":=", 
+  RowBox[{"CopyToClipboard", "[", 
+   RowBox[{"AddSemicolon", "[", 
+    RowBox[{"AppendBase", "[", 
+     RowBox[{
+      RowBox[{"DeleteNewLineAndReturnCharacters", "[", 
+       RowBox[{"ReplaceSquareBracketsWithParentheses", "[", 
+        RowBox[{"DeleteQPhI", "[", 
+         RowBox[{"NonCommutativeMultiplyToTimes", "[", 
+          RowBox[{"BuildTeXFragment", "[", 
+           RowBox[{"RemoveList", "[", 
+            RowBox[{"PlaceQInFront", "[", "input", "]"}], "]"}], "]"}], "]"}],
+          "]"}], "]"}], "]"}], ",", 
+      RowBox[{"ToString", "[", 
+       RowBox[{"TeXForm", "[", "Infinity", "]"}], "]"}]}], "]"}], "]"}], 
+   "]"}]}]}], "Input",
+ CellLabel->"In[95]:=",ExpressionUUID->"89f16704-873c-4957-8275-63a427124246"]
+}, Open  ]]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"376065e4-3867-4d85-aee8-2c98b809ca08"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 22, 640, 20, 222, "Title",ExpressionUUID->"5c0f1036-bc99-4d67-8c81-bdf150d1ff3c"],
+Cell[1226, 44, 216, 5, 28, "Input",ExpressionUUID->"3850598f-771b-469b-ad75-8ceb9e19b84e"],
+Cell[CellGroupData[{
+Cell[1467, 53, 218, 3, 28, "Input",ExpressionUUID->"38e27eff-1fab-4e0f-9f93-3a230b936007"],
+Cell[1688, 58, 2918, 46, 451, "Output",ExpressionUUID->"04d74389-7b43-45d1-bf25-124707a9e75a"]
+}, Open  ]],
+Cell[4621, 107, 876, 19, 181, "Input",ExpressionUUID->"89f16704-873c-4957-8275-63a427124246"]
+}, Open  ]]
+}
+]
+*)
+
